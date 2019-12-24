@@ -1,7 +1,5 @@
 package Chapter04;
 
-import java.util.*;
-
 public class ChicagoPizzaStore extends PizzaStore {
 
     protected Pizza createPizza(String item) {
