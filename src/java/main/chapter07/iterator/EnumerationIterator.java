@@ -1,8 +1,8 @@
 /**
- * package Chapter07_enumIterAdapter
+ * package chapter07.iterator
  * Adapter mode
  */
-package Chapter07_enumIterAdapter;
+package chapter07.iterator;
 
 import java.util.Enumeration;
 import java.util.Iterator;

@@ -1,8 +1,8 @@
 /**
- * package Chapter07_hometheater
+ * package chapter07.hometheater
  * Appearance mode
  */
-package Chapter07_hometheater;
+package chapter07.hometheater;
 
 /**
  * @author MY
