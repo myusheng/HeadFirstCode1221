@@ -1,62 +1,62 @@
 package Chapter06_remote;
 public class RemoteLoader {
-	
-	public static void main(String[] args) {
-		RemoteControl remoteControl = new RemoteControl();
-		
-		//½«ËùÓĞµÄ×°ÖÃ´´½¨ÔÚºÏÊÊµÄÎ»ÖÃ
-		Light livingRoomLight = new Light("Living Room");
-		Light kitchenLight = new Light("Kitchen");
-		
-		CeilingFan ceilingFan = new CeilingFan("Living room");
-		GarageDoor garageDoor = new GarageDoor("");
-		Stereo stereo = new Stereo("Living Room");
-		
-        //´´½¨ËùÓĞµÄµçµÆÃüÁî×°ÖÃ
-		LightOnCommand livingRoomLightOn = new LightOnCommand(livingRoomLight);
-		LightOffCommand livingRoomLightOff = new LightOffCommand(livingRoomLight);
-		LightOnCommand kitchenLightOn = new LightOnCommand(kitchenLight);
-		LightOffCommand kitchenLightOff = new LightOffCommand(kitchenLight);
-		
-        //´´½¨µõÉÈµÄ¿ªÓë¹ØÃüÁî		
-		CeilingFanOnCommand ceilingFanOn = 
-				new CeilingFanOnCommand(ceilingFan);
-		CeilingFanOffCommand ceilingFanOff = 
-				new CeilingFanOffCommand(ceilingFan);
-		
-		//´´½¨³µ¿âÃÅµÄÉÏÓëÏÂÃüÁî
-		GarageDoorUpCommand garageDoorUp =
-				new GarageDoorUpCommand(garageDoor);
-		GarageDoorDownCommand garageDoorDown =
-				new GarageDoorDownCommand(garageDoor);
-		
-		//´´½¨ÒôÏìµÄ¿ªÓë¹ØÃüÁî
-		StereoOnWithCDCommand stereoOnWithCD =
-				new StereoOnWithCDCommand(stereo);
-		StereoOffCommand  stereoOff =
-				new StereoOffCommand(stereo);
-		
-		//ÏÖÔÚÒÑ¾­ÓĞÁËÈ«²¿µÄÃüÁî£¬¿ÉÒÔ½«ËûÃÇ¼ÓÔØµ½Ò£¿ØÆ÷²å²ÛÖĞ
-		remoteControl.setCommand(0, livingRoomLightOn, livingRoomLightOff);
-		remoteControl.setCommand(1, kitchenLightOn, kitchenLightOff);
-		remoteControl.setCommand(2, ceilingFanOn, ceilingFanOff);
-		remoteControl.setCommand(3, stereoOnWithCD, stereoOff);
-		remoteControl.setCommand(4, garageDoorUp, garageDoorDown);
-		
-		//Ê¹ÓÃtoString·½·¨£¬´òÓ¡³öÃ¿¸öÒ£¿ØÆ÷µÄ²å²ÛºÍËü±»ÖÆ¶¨µÄÃüÁî
-		System.out.println(remoteControl);
-		
-		//Öğ²½°´ÏÂÃ¿¸ö²å²ÛµÄ¿ªÓë¹Ø°´Å¥
-		remoteControl.onButtonWasPushed(0);
-		remoteControl.offButtonWasPushed(0);
-		remoteControl.onButtonWasPushed(1);
-		remoteControl.offButtonWasPushed(1);
-		remoteControl.onButtonWasPushed(2);
-		remoteControl.offButtonWasPushed(2);
-		remoteControl.onButtonWasPushed(3);
-		remoteControl.offButtonWasPushed(3);
-		remoteControl.onButtonWasPushed(4);
-		remoteControl.offButtonWasPushed(4);
-	}
+
+    public static void main(String[] args) {
+        RemoteControl remoteControl = new RemoteControl();
+
+        //å°†æ‰€æœ‰çš„è£…ç½®åˆ›å»ºåœ¨åˆé€‚çš„ä½ç½®
+        Light livingRoomLight = new Light("Living Room");
+        Light kitchenLight = new Light("Kitchen");
+
+        CeilingFan ceilingFan = new CeilingFan("Living room");
+        GarageDoor garageDoor = new GarageDoor("");
+        Stereo stereo = new Stereo("Living Room");
+
+        //åˆ›å»ºæ‰€æœ‰çš„ç”µç¯å‘½ä»¤è£…ç½®
+        LightOnCommand livingRoomLightOn = new LightOnCommand(livingRoomLight);
+        LightOffCommand livingRoomLightOff = new LightOffCommand(livingRoomLight);
+        LightOnCommand kitchenLightOn = new LightOnCommand(kitchenLight);
+        LightOffCommand kitchenLightOff = new LightOffCommand(kitchenLight);
+
+        //åˆ›å»ºåŠæ‰‡çš„å¼€ä¸å…³å‘½ä»¤
+        CeilingFanOnCommand ceilingFanOn =
+            new CeilingFanOnCommand(ceilingFan);
+        CeilingFanOffCommand ceilingFanOff =
+            new CeilingFanOffCommand(ceilingFan);
+
+        //åˆ›å»ºè½¦åº“é—¨çš„ä¸Šä¸ä¸‹å‘½ä»¤
+        GarageDoorUpCommand garageDoorUp =
+            new GarageDoorUpCommand(garageDoor);
+        GarageDoorDownCommand garageDoorDown =
+            new GarageDoorDownCommand(garageDoor);
+
+        //åˆ›å»ºéŸ³å“çš„å¼€ä¸å…³å‘½ä»¤
+        StereoOnWithCDCommand stereoOnWithCD =
+            new StereoOnWithCDCommand(stereo);
+        StereoOffCommand  stereoOff =
+            new StereoOffCommand(stereo);
+
+        //ç°åœ¨å·²ç»æœ‰äº†å…¨éƒ¨çš„å‘½ä»¤ï¼Œå¯ä»¥å°†ä»–ä»¬åŠ è½½åˆ°é¥æ§å™¨æ’æ§½ä¸­
+        remoteControl.setCommand(0, livingRoomLightOn, livingRoomLightOff);
+        remoteControl.setCommand(1, kitchenLightOn, kitchenLightOff);
+        remoteControl.setCommand(2, ceilingFanOn, ceilingFanOff);
+        remoteControl.setCommand(3, stereoOnWithCD, stereoOff);
+        remoteControl.setCommand(4, garageDoorUp, garageDoorDown);
+
+        //ä½¿ç”¨toStringæ–¹æ³•ï¼Œæ‰“å°å‡ºæ¯ä¸ªé¥æ§å™¨çš„æ’æ§½å’Œå®ƒè¢«åˆ¶å®šçš„å‘½ä»¤
+        System.out.println(remoteControl);
+
+        //é€æ­¥æŒ‰ä¸‹æ¯ä¸ªæ’æ§½çš„å¼€ä¸å…³æŒ‰é’®
+        remoteControl.onButtonWasPushed(0);
+        remoteControl.offButtonWasPushed(0);
+        remoteControl.onButtonWasPushed(1);
+        remoteControl.offButtonWasPushed(1);
+        remoteControl.onButtonWasPushed(2);
+        remoteControl.offButtonWasPushed(2);
+        remoteControl.onButtonWasPushed(3);
+        remoteControl.offButtonWasPushed(3);
+        remoteControl.onButtonWasPushed(4);
+        remoteControl.offButtonWasPushed(4);
+    }
 
 }

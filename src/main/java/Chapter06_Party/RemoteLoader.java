@@ -1,42 +1,43 @@
+
 package Chapter06_Party;
 
 public class RemoteLoader {
 
-	public static void main(String[] args) {
+    public static void main(String[] args) {
 
-		RemoteControl remoteControl = new RemoteControl();
-        
-		//ÏÈ´´½¨ÏëÒª½øÈëºêµÄÃüÁî¼¯ºÏ
-		Light light = new Light("Living Room");
-		TV tv = new TV("Living Room");
-		Stereo stereo = new Stereo("Living Room");
-		Hottub hottub = new Hottub();
- 
-		LightOnCommand lightOn = new LightOnCommand(light);
-		StereoOnCommand stereoOn = new StereoOnCommand(stereo);
-		TVOnCommand tvOn = new TVOnCommand(tv);
-		HottubOnCommand hottubOn = new HottubOnCommand(hottub);
-		
-		LightOffCommand lightOff = new LightOffCommand(light);
-		StereoOffCommand stereoOff = new StereoOffCommand(stereo);
-		TVOffCommand tvOff = new TVOffCommand(tv);
-		HottubOffCommand hottubOff = new HottubOffCommand(hottub);
-		
-        //´´½¨Á½¸öÊı×é£¬ÆäÖĞÒ»¸öÓÃÀ´¼ÇÂ¼¿ªÆôÃüÁî£¬ÁíÒ»¸öÓÃÀ´¼ÇÂ¼¹Ø±ÕÃüÁî£¬²¢ÔÚÊı×éÄÚ·ÅÈë¶ÔÓ¦µÄÃüÁî
-		Command[] partyOn = { lightOn, stereoOn, tvOn, hottubOn};
-		Command[] partyOff = { lightOff, stereoOff, tvOff, hottubOff};
-  
-		MacroCommand partyOnMacro = new MacroCommand(partyOn);
-		MacroCommand partyOffMacro = new MacroCommand(partyOff);
-		
-        //½«ºêÃüÁîÖÆ¶¨¸øÎÒÃÇÏ£ÍûµÄ°´Å¥
-		remoteControl.setCommand(0, partyOnMacro, partyOffMacro);
-		
-        //°´ÏÂÒ»Ğ©°´Å¥£¬²âÊÔÊÇ·ñÕı³£¹¤×÷
-		System.out.println(remoteControl);
-		System.out.println("--- Pushing Macro On---");
-		remoteControl.onButtonWasPushed(0);
-		System.out.println("--- Pushing Macro Off---");
-		remoteControl.offButtonWasPushed(0);
-	}
+        RemoteControl remoteControl = new RemoteControl();
+
+        //å…ˆåˆ›å»ºæƒ³è¦è¿›å…¥å®çš„å‘½ä»¤é›†åˆ
+        Light light = new Light("Living Room");
+        TV tv = new TV("Living Room");
+        Stereo stereo = new Stereo("Living Room");
+        Hottub hottub = new Hottub();
+
+        LightOnCommand lightOn = new LightOnCommand(light);
+        StereoOnCommand stereoOn = new StereoOnCommand(stereo);
+        TVOnCommand tvOn = new TVOnCommand(tv);
+        HottubOnCommand hottubOn = new HottubOnCommand(hottub);
+
+        LightOffCommand lightOff = new LightOffCommand(light);
+        StereoOffCommand stereoOff = new StereoOffCommand(stereo);
+        TVOffCommand tvOff = new TVOffCommand(tv);
+        HottubOffCommand hottubOff = new HottubOffCommand(hottub);
+
+        //åˆ›å»ºä¸¤ä¸ªæ•°ç»„ï¼Œå…¶ä¸­ä¸€ä¸ªç”¨æ¥è®°å½•å¼€å¯å‘½ä»¤ï¼Œå¦ä¸€ä¸ªç”¨æ¥è®°å½•å…³é—­å‘½ä»¤ï¼Œå¹¶åœ¨æ•°ç»„å†…æ”¾å…¥å¯¹åº”çš„å‘½ä»¤
+        Command[] partyOn = { lightOn, stereoOn, tvOn, hottubOn};
+        Command[] partyOff = { lightOff, stereoOff, tvOff, hottubOff};
+
+        MacroCommand partyOnMacro = new MacroCommand(partyOn);
+        MacroCommand partyOffMacro = new MacroCommand(partyOff);
+
+        //å°†å®å‘½ä»¤åˆ¶å®šç»™æˆ‘ä»¬å¸Œæœ›çš„æŒ‰é’®
+        remoteControl.setCommand(0, partyOnMacro, partyOffMacro);
+
+        //æŒ‰ä¸‹ä¸€äº›æŒ‰é’®ï¼Œæµ‹è¯•æ˜¯å¦æ­£å¸¸å·¥ä½œ
+        System.out.println(remoteControl);
+        System.out.println("--- Pushing Macro On---");
+        remoteControl.onButtonWasPushed(0);
+        System.out.println("--- Pushing Macro Off---");
+        remoteControl.offButtonWasPushed(0);
+    }
 }
