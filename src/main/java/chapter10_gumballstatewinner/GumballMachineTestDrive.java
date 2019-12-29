@@ -43,10 +43,6 @@ public class GumballMachineTestDrive {
         gumballMachine.turnCrank();
         gumballMachine.insertQuarter();
         gumballMachine.turnCrank();
-
-
-        
-
         System.out.println(gumballMachine);
     }
 }
