@@ -1,5 +1,8 @@
 package Chapter01;
 
+import com.sun.scenario.effect.impl.sw.java.JSWBlend_SRC_OUTPeer;
+import org.w3c.dom.ls.LSOutput;
+
 public abstract class Duck {
     FlyBehavior flyBehavior;
     QuackBehavior quackBehavior;
@@ -30,7 +33,8 @@ public abstract class Duck {
 
     public void swim()
     {
-        System.out.println("All ducks float,even decoys!");
+        System.out.println("All ducks float,even decoys!!");
+        System.out.println("!");
     }
 
 }
